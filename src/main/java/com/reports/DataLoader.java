@@ -3,12 +3,10 @@ package com.reports;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
-
 import com.reports.entity.Citizen_Info;
 import com.reports.repository.CitizenRepository;
 
@@ -21,6 +19,7 @@ public class DataLoader implements ApplicationRunner{
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
+	citizenRepository.deleteAll();
 		Citizen_Info c1 = new Citizen_Info();
 		c1.setCitizenName("rama");
 		c1.setGender("male");
